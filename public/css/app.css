@@ -1,15 +1,15 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     background-color: #f2f2f2;
 }
 
-.wrapper{
+.wrapper {
     max-width: 960px;
     margin: 2rem auto;
 }
 
-header{
+header {
     background-color: #EEBA30;
     color: #AE0001;
     padding: 1rem 2rem;
@@ -18,7 +18,7 @@ header{
     grid-gap: 2rem;
 }
 
-nav{
+nav {
     min-width: 50%;
     max-width: 500px;
     display: flex;
@@ -27,61 +27,95 @@ nav{
     flex-wrap: wrap;
 }
 
-header .title{
+header .title {
     font-family: Metamorphous;
     font-size: 2.25rem;
     display: flex;
     align-items: center;
 }
 
-nav a{
+nav a {
     color: #AE0001;
     text-decoration: none;
 }
 
-nav a.active{
+nav a.active {
     color: #740001;
     font-weight: bold;
 }
 
-.company{
+.company {
     color: #f14142;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-img.logo{
+img.logo {
     max-height: 45px;
     margin-left: 8px;
 }
 
-.table{
+.table {
     width: 100%;
 }
 
-.table th{
+.table th {
     background-color: #AE0001;
 }
 
-.table th, .table td{
+.table th,
+.table td {
     padding: .5em 1em;
 }
 
-.table tr:nth-child(odd) td
-{
+.table tr:nth-child(odd) td {
     background-color: #EEBA30;
 }
 
-.table tr:hover td{
+.table tr:hover td {
     background-color: #D3A625;
 }
 
-label{
+label {
     min-width: 160px;
     display: inline-block;
 }
 
-.form-control{
+.form-control {
     min-width: 200px;
+}
+
+.contaier {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    grid-template-rows: 0.5fr;
+    grid-gap: 30px;
+    text-align: center;
+}
+
+.total-tournament,
+.total-teams,
+.contaier img {
+    border: 1px solid #eeba30;
+
+}
+
+.contaier img {
+    padding: 20px;
+}
+
+.text-holder {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 300px 1fr;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    line-height: 1.2;
 }
