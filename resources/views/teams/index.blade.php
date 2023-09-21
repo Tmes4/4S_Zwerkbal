@@ -21,9 +21,9 @@
         </tr>
         @foreach($teams as $team)
             <tr>
-                <td>{{ $team->name }}</td>
-                <td>{{ $team->date }}</td>
-                <td>{{ $team->start_time }}</td>
+                <td>{{ $team->team }}</td>
+                <td>{{ $team->soort }}</td>
+                <td>{{ $team->herkomst }}</td>
             </tr>
         @endforeach
     </table>
