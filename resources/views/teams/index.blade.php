@@ -9,4 +9,25 @@
     </nav>
 @endsection
 
+
+@section('content')
+
+    <h1>Teams</h1>
+    <table class="table">
+        <tr>
+            <th>Team</th>
+            <th>Soort</th>
+            <th>Herkomst</th>
+        </tr>
+        @foreach($teams as $team)
+            <tr>
+                <td>{{ $team->name }}</td>
+                <td>{{ $team->date }}</td>
+                <td>{{ $team->start_time }}</td>
+            </tr>
+        @endforeach
+    </table>
+
+@endsection
+
 <!-- hier komt een lijst van teams -->
