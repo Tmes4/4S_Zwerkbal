@@ -94,6 +94,8 @@ label {
     text-align: center;
 }
 
+
+
 .total-tournament,
 .total-teams,
 .contaier img {
@@ -101,21 +103,34 @@ label {
 
 }
 
+.total-tournament {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .contaier img {
     padding: 20px;
+    max-width: 350px;
 }
 
 .text-holder {
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 300px 1fr;
+    /* grid-template-rows: 300px 1fr; */
 }
 
 h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
     text-align: center;
     line-height: 1.2;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.total-tournament p {
+    font-size: 24px;
 }
