@@ -6,6 +6,7 @@
     <a href="/tournaments">Toernooien</a>
     <a href="/teams">Teams</a>
     <a href="/players">Spelers</a>
+    <a href="/upcoming">UpComing</a>
 </nav>
 @endsection
 

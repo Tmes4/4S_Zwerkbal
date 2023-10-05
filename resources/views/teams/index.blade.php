@@ -20,10 +20,10 @@
             <th>Herkomst</th>
         </tr>
         @foreach($teams as $team)
-            <tr>
-                <td>{{ $team->team }}</td>
-                <td>{{ $team->soort }}</td>
-                <td>{{ $team->herkomst }}</td>
+            <tr >
+                <td>{{ $team->name }}</td>
+                <td>{{ $team->type }}</td>
+                <td>{{ $team->origin }}</td>
             </tr>
         @endforeach
     </table>

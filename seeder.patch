@@ -1,0 +1,60 @@
+From aad6ebc5081cf38227bdd5c1d0ecd531eb48e39e Mon Sep 17 00:00:00 2001
+From: Bart Roos <bart@studiokaa.co>
+Date: Wed, 21 Jul 2021 13:50:01 +0200
+Subject: [PATCH] Update DatabaseSeeder.php
+
+---
+ database/seeders/DatabaseSeeder.php | 37 +++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+diff --git a/database/seeders/DatabaseSeeder.php b/database/seeders/DatabaseSeeder.php
+index b7edcae..73206b4 100644
+--- a/database/seeders/DatabaseSeeder.php
++++ b/database/seeders/DatabaseSeeder.php
+@@ -20,6 +20,43 @@ class DatabaseSeeder extends Seeder
+         //
+         // NIETS AANPASSEN TUSSEN DEZE REGELS!
+         // ~!@#$%^&**()_+
++
++        //
++        // (EXTRA) TEAMS
++        //
++        $team = new \App\Models\Team();
++        $team->name = "German National Quidditch team";
++        $team->type = "country";
++        $team->origin = "Duitsland";
++        $team->save();
++
++        $team = new \App\Models\Team();
++        $team->name = "Hufflepuff";
++        $team->type = "school";
++        $team->origin = "Zweinstein";
++        $team->save();
++
++        $team = new \App\Models\Team();
++        $team->name = "4S Quidditch Team";
++        $team->type = "commercial";
++        $team->save();
++
++        //
++        // SPELERS
++        //
++        $characters = ["Ludo Bagman", "Argus Filch", "Marvolo Gaunt", "Rubeus Hagrid", "Lee Jordan", "Viktor Krum", "Draco Malfoy", "Padma Patil", "Newt Scamander", "Fred Weasley", "Oliver Wood", "Horace Slughorn", "Alicia Spinnet", "Garrick Ollivander", "Luna Lovegood", "Neville Longbottom", "Gregory Goyle", "Colin Creevey", "Susan Bones", "Hannah Abbott"];
++        $types = ["chaser", "beater", "keeper", "seeker"];
++        $teams = \App\Models\Team::all();
++
++        foreach($characters as $character)
++        {
++            $player = new \App\Models\Player();
++            $player->team_id = $teams->random()->id;
++            $player->name = $character;
++            $player->type = $types[array_rand($types)];
++            $player->save();
++        }
++
+         // +_)(*&^%$#@!~
+         // NIETS AANPASSEN TUSSEN DEZE REGELS!
+         // 
+-- 
+2.23.0.windows.1
+

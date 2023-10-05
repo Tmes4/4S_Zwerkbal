@@ -2,10 +2,12 @@
 
 @section('nav')
 <nav>
-    <a href="/home">Home</a>
+    <a href="/">Home</a>
     <a href="/tournaments">Toernooien</a>
     <a href="/teams">Teams</a>
     <a href="/players">Spelers</a>
+    <a href="/upcoming" class="actvie">UpcCming</a>
+
 </nav>
 @endsection
 

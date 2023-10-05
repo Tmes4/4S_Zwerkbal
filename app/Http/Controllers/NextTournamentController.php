@@ -21,7 +21,7 @@ class NextTournamentController extends Controller
             // ->get()
             ->first();
 
-        return view('next')
+        return view('upcoming/next')
             ->with('tournaments', $tournaments);
     }
 }
