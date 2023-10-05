@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NextTournamentController;
+use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\TeamController;
 
@@ -26,5 +27,7 @@ Route::get('/tournaments/{tournament}/edit', [TournamentController::class, 'edit
 Route::put('/tournaments/{tournament}', [TournamentController::class, 'update'])->name('tournaments.update');
 
 Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+
+Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
 
 Route::get('/upcoming', [NextTournamentController::class, 'index'])->name('next');
