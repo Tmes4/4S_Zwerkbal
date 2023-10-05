@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Tournament;
+use App\Models\Team;
+use App\Models\Player;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,12 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //
-    	// Je kunt hier je eigen seeders invoegen:
-        //
-
-
-
 
         //Tournament 1
         $tournament = new Tournament();
@@ -37,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
         //Tournament 3
         $tournament = new Tournament();
-        $tournament->name = "Scholentoernooi " . (date('Y')+1);
+        $tournament->name = "Scholentoernooi " . (date('Y') + 1);
         $tournament->date = date("Y-m-d", strtotime("+13 months"));
         $tournament->save();
 
@@ -47,6 +43,45 @@ class DatabaseSeeder extends Seeder
         $tournament->date = date("Y-m-d");
         $tournament->start_time = rand(1, 20) . ":00:00";
         $tournament->save();
+
+        //Team 1
+        $team = new Team();
+        $team->teamName = "German National Quidditch team";
+        $team->type = "country";
+        $team->origin = "Duitsland";
+        $team->save();
+
+        //Team 2
+        $team = new Team();
+        $team->teamName = "Hufflepuff";
+        $team->type = "school";
+        $team->origin = "Zweinstein";
+        $team->save();
+
+        //Team 3
+        $team = new Team();
+        $team->teamName = "4S Quidditch Team";
+        $team->type = "commercial";
+        $team->save();
+
+
+        // Spelers
+
+        $characters = ["Ludo Bagman", "Argus Filch", "Marvolo Gaunt", "Rubeus Hagrid", "Lee Jordan", "Viktor Krum", "Draco Malfoy", "Padma Patil", "Newt Scamander", "Fred Weasley", "Oliver Wood", "Horace Slughorn", "Alicia Spinnet", "Garrick Ollivander", "Luna Lovegood", "Neville Longbottom", "Gregory Goyle", "Colin Creevey", "Susan Bones", "Hannah Abbott"];
+        $types = ["chaser", "beater", "keeper", "seeker"];
+        $teams = Team::all();
+
+        foreach ($characters as $character) {
+            $player = new Player();
+            $player->team_id = $teams->random()->id;
+            $player->name = $character;
+            $player->type = $types[array_rand($types)];
+            $player->save();
+        }
+
+
+
+
 
         //
         // NIETS AANPASSEN TUSSEN DEZE REGELS!

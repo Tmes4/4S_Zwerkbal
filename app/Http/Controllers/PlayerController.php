@@ -26,7 +26,7 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        return view('players/create');
     }
 
     /**
@@ -37,8 +37,9 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
+
 
     /**
      * Display the specified resource.

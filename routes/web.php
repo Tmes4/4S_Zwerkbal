@@ -29,5 +29,6 @@ Route::put('/tournaments/{tournament}', [TournamentController::class, 'update'])
 Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
 
 Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
+Route::get('/players/create', [PlayerController::class, 'create'])->name('players.create');
 
 Route::get('/upcoming', [NextTournamentController::class, 'index'])->name('next');

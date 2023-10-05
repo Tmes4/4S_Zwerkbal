@@ -12,14 +12,22 @@
 
 
 @section('content')
-
+    <a href="{{ route('players.create') }}">+ Nieuw Speler</a>
     <h1>Spelers</h1>
     <table class="table">
         <tr>
-            <th>Team_id</th>
-            <th>Soort</th>
-            <th>Herkomst</th>
+            <th>Naam</th>
+            <th>Type</th>
+            <th>Team</th>
         </tr>
+        @foreach($players as $Player)
+            <tr >
+                <td>{{ $Player->name }}</td>
+                <td>{{ $Player->type }}</td>
+                <td>{{ $Player->team->teamName }}</td>
+
+            </tr>
+        @endforeach
 
     </table>
 
