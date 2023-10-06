@@ -1,12 +1,13 @@
 @extends('layout')
 
 @section('nav')
-    <nav>
-        <a href="/">Home</a>
-        <a href="/tournaments" class="active">Toernooien</a>
-        <a href="/teams">Teams</a>
-        <a href="/players">Spelers</a>
-    </nav>
+<nav>
+    <a href="/">Home</a>
+    <a href="/tournaments" class="active">Toernooien</a>
+    <a href="/teams">Teams</a>
+    <a href="/players">Spelers</a>
+    <a href="/upcoming">UpComing</a>
+</nav>
 @endsection
 
 @section('content')

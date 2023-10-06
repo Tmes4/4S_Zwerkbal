@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -26,7 +27,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('players/create');
+        $teams = Team::all();
+        return view('players/create', compact('teams'));
     }
 
     /**
@@ -37,7 +39,19 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'team_id' => 'required',
+            'type' => 'required',
+            'name' => 'required'
+        ]);
 
+        $player = new Player();
+        $player->team_id = $request->team_id;
+        $player->type = $request->type;
+        $player->name = $request->name;
+        $player->save();
+
+        return redirect()->route('players.index');
     }
 
 

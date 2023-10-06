@@ -134,3 +134,17 @@ h2 {
 .total-tournament p {
     font-size: 24px;
 }
+
+.form-group  {
+    padding-top: 30px;
+}
+
+.form-group, label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-group, select {
+    padding: 10px;
+    font-size: 14px;
+}
